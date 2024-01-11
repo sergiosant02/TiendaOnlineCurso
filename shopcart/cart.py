@@ -21,7 +21,7 @@ class Cart:
         else:
             for key, value in self.cart.items():
                 if key==str(product.id):
-                    value["quantity"]+=value["quantity"]+1
+                    value["quantity"] += 1
                     break
         self.save_cart()
 
@@ -30,10 +30,14 @@ class Cart:
             for key, value in self.cart.items():
                 if key==str(product.id):
                     if value["quantity"]>1:
-                        value["quantity"]+=value["quantity"]-1
+                        value["quantity"] -= 1
                     else:
                         self.delete(product)
                     break
+        self.save_cart()
+    
+    def clear_cart(self):
+        self.cart = {}
         self.save_cart()
 
     def save_cart(self):
