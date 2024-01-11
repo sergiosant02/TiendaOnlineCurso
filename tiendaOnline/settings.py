@@ -84,6 +84,9 @@ DATABASES = {
         'PASSWORD' : "pass",
         'HOST' : "localhost",
         'DATABASE_PORT' : 5432,
+        'OPTIONS': {
+            'options': '-c timezone=UTC',
+        },
     }
 }
 
