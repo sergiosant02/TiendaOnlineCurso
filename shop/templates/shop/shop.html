@@ -1,0 +1,51 @@
+
+{% extends "tiendaOnlineApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+      {% if products|length > 0 %}
+      <div class="container">
+            <div class="row">
+                  {% for product in products %}
+
+                  <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                              <img class="card-img-top" src="{{ product.image.url }}" alt="">
+                              <div class="card-body" style="text-align: center;">
+                                    <h7>{{ product.name }}</h7>
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <p class="card-text">{{ product.price }}€</p>
+                              </div>
+                        </div>
+            
+                  </div>
+
+            {% endfor %}
+
+            </div>
+      </div>
+
+           
+
+            <section>
+                  <div style="width: 75%; margin:auto; text-align: center; color: white;"> 
+                        Categorías:
+
+                        {% for category in categories %}
+                              <p>{{category}}</p>
+                        {%endfor%}
+                  
+                  </div>
+            </section>
+
+      {% else %}
+      <section>
+            <div style="width: 75%; margin:auto; text-align: center; color: white;"> 
+                  No hay productos
+            
+            </div>
+      </section>
+      {% endif %}
+        
+{% endblock %}
