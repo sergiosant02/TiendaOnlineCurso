@@ -1,4 +1,4 @@
 *.pyc
 migrations/
 .DS_Store
-
+venv/

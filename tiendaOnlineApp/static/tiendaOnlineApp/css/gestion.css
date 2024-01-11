@@ -277,3 +277,21 @@ ul.errorlist{
   font-style: italic;
   color: red;
 }
+
+.links_categories {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
+.links_categories:hover {
+  text-decoration: none !important;
+}
+
+.forms {
+  color: white !important;
+  background-color: rgba(24, 64, 8) !important;
+  margin: 10px auto !important;
+  border-radius: 5px;
+  padding: 1px 0;
+  
+}
