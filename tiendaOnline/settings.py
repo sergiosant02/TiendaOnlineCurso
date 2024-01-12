@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,6 +45,10 @@ INSTALLED_APPS = [
     "contact",
     "shop",
     "shopcart",
+    "authentication",
+    "crispy_forms",
+    "crispy_bootstrap4",
+    "orders",
 ]
 
 MIDDLEWARE = [
@@ -69,6 +74,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "shopcart.context_processor.total_cost_cart",
             ],
         },
     },
@@ -117,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "es-eu"
 
 TIME_ZONE = "UTC"
 
@@ -146,3 +152,17 @@ EMAIL_USE_TLS=True
 EMAIL_PORT = 587
 EMAIL_HOST_PASSWORD='hulp rfpq boxy otqa'
 EMAIL_HOST_USER='decide202324@gmail.com'
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+MESSAGE_TAGS = {
+    messages.DEBUG: "debug",
+    messages.INFO: "info",
+    messages.SUCCESS: "success",
+    messages.WARNING: "warning",
+    messages.ERROR: "error",
+    
+}
