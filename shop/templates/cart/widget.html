@@ -22,14 +22,12 @@
             {% for key,value in request.session.cart.items %}
             <tr>
                 <td>
-                    {{value.name}}
+                    {{value.product_name}}
                 </td>
                 <td>
                     {{value.quantity}}
                 </td>
-                <td>
-                    {{value.name}}
-                </td>
+                
                 <td>
 
                     <a href="{% url 'shopcart:add' value.product_id %}" class="btn btn-sm btn-success">
@@ -64,5 +62,12 @@
                 Total: {{total_cost_cart}}
             </td>
         </tr>
+        {% if  request.session.cart.items %}
+        <tr>
+            <td colspan="3" style="text-align: center;">
+                <a href="{% url 'orders:order' %}" class="btn btn-success">Hacer pedido</a>
+            </td>
+        </tr>
+        {% endif %}
     </tfoot>
 </table>

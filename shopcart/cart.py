@@ -18,7 +18,7 @@ class Cart:
 
     def add(self, product: Product, quantity=1):
         if(str(product.id) not in self.cart.keys()):
-            self.cart[str(product.id)]={"product_id":product.id,"quantity":1, "price":str(product.price), "image":product.image.url}
+            self.cart[str(product.id)]={"product_id":product.id, "product_name":product.name,"quantity":1, "price":str(product.price), "image":product.image.url}
         else:
             for key, value in self.cart.items():
                 if key==str(product.id):
